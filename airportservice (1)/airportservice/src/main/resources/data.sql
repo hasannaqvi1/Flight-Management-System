@@ -1,0 +1,1 @@
+insert into Airport(airportname, airportcode, airportlocation) values('a','b','c');
