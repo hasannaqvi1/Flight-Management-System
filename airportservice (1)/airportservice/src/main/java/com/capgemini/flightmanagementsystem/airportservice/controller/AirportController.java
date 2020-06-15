@@ -1,3 +1,9 @@
+/****************************************************************************************************************************
+ - File Name        : AirportController
+ - Author           : Raza Hasan
+ - Creation Date    : 11-06-2020
+ - Description      : This is an end point controller to consume Airport Services.
+  ****************************************************************************************************************************/ 
 package com.capgemini.flightmanagementsystem.airportservice.controller;
 
 import java.util.List;
@@ -20,9 +26,9 @@ public class AirportController {
 	/****************************************************************************************************************************
 	 - Method Name      : viewAirort
 	 - Input Parameters : -
-	 - Return type      : Return all airport available
+	 - Return type      : List<Airport>
 	 - Author           : Raza Hasan
-	 - Creation Date    : 14-06-2020
+	 - Creation Date    : 11-06-2020
 	 - Description      : Shows all available airport
 	 -End point URL     : localhost:4569/viewAirport
 	  ****************************************************************************************************************************/ 
@@ -34,9 +40,9 @@ public class AirportController {
 	/****************************************************************************************************************************
 	 - Method Name      : viewAirortById
 	 - Input Parameters : airport code
-	 - Return type      : Return airport of a given airport code
+	 - Return type      : Airport Entity
 	 - Author           : Raza Hasan
-	 - Creation Date    : 14-06-2020
+	 - Creation Date    : 11-06-2020
 	 - Description      : Shows airport of a given airport code
 	 -End point URL     : localhost:4569/viewAirportById
 	  ****************************************************************************************************************************/ 

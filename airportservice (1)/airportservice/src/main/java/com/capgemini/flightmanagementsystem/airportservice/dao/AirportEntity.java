@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="Airport")
@@ -17,10 +18,12 @@ public class AirportEntity {
 	@Column(name="airportcode")
 	@NotBlank(message="Airport Code is mandatory")
 	@NotNull(message="Airport Code is mandatory")
+	@Size(min = 2, max = 8, message="Airport Code must be equal to or greater than 2 character and less than 8")
 	private String airportCode;
 	@Column(name="airportname")
 	@NotBlank(message="Airport Name is mandatory")
 	@NotNull(message="Airport Name is mandatory")
+	@Size(min = 2, max = 8, message="Airport Name must be equal to or greater than 2 character and less than 8")
 	private String airportName;
 	@Column(name="airportlocation")
 	@NotBlank(message="Airport Location is mandatory")

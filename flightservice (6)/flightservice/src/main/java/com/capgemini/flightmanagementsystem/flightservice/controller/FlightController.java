@@ -1,3 +1,9 @@
+/****************************************************************************************************************************
+ - File Name        : FlightController
+ - Author           : Raza Hasan
+ - Creation Date    : 11-06-2020
+ - Description      : This is an end point controller to consume Flight Services.
+  ****************************************************************************************************************************/ 
 package com.capgemini.flightmanagementsystem.flightservice.controller;
 
 import java.util.List;
@@ -26,10 +32,10 @@ public class FlightController {
 FlightService service;
 /****************************************************************************************************************************
 - Method Name      : addFlight
-- Input Parameters : flight
+- Input Parameters : Flight
 - Return type      : ResponseEntity<String>
 - Author           : Raza Hasan
-- Creation Date    : 14-06-2020
+- Creation Date    : 11-06-2020
 - Description      : Adding Flight to existing Flights.
 -End point URL     : localhost:4568/addFlight
  ****************************************************************************************************************************/ 
@@ -41,9 +47,9 @@ public ResponseEntity<String> addFlight(@Valid @RequestBody Flight flight) {
 /****************************************************************************************************************************
 - Method Name      : viewFlight
 - Input Parameters : -
-- Return type      : Return flight
+- Return type      : List<Flight>
 - Author           : Raza Hasan
-- Creation Date    : 14-06-2020
+- Creation Date    : 11-06-2020
 - Description      : Shows all available flights.
 -End point URL     : localhost:4568/viewFlight
  ****************************************************************************************************************************/ 
@@ -56,7 +62,7 @@ public List<Flight> viewFlight() {
 - Input Parameters : flightnumber
 - Return type      : Return flight
 - Author           : Raza Hasan
-- Creation Date    : 14-06-2020
+- Creation Date    : 11-06-2020
 - Description      : Show  flight of a given flight number.
 -End point URL     : localhost:4568/viewFlightById/{flightnumber}
  ****************************************************************************************************************************/ 
@@ -69,7 +75,7 @@ public FlightEntity  viewFlightById(@PathVariable("flightnumber")Long flightnumb
 - Input Parameters : flightnumber
 - Return type      : ResponseEntity<String>
 - Author           : Raza Hasan
-- Creation Date    : 14-06-2020
+- Creation Date    : 11-06-2020
 - Description      : Updates a flight of a given flight number.
 -End point URL     : localhost:4568/updateFlightById/{flightnumber}
  ****************************************************************************************************************************/ 
@@ -79,11 +85,11 @@ public ResponseEntity<String> updateFlightById(@PathVariable Long flightnumber, 
 }
 /****************************************************************************************************************************
 - Method Name      : deleteFlightById
-- Input Parameters : flightnumber
+- Input Parameters : flight number
 - Return type      : ResponseEntity<String>
 - Author           : Raza Hasan
-- Creation Date    : 14-06-2020
-- Description      : Delets a flight of a given flight number
+- Creation Date    : 11-06-2020
+- Description      : Deletes a flight of a given flight number
 -End point URL     : localhost:4568/deleteFlightById/{flightnumber}
  ****************************************************************************************************************************/ 
 

@@ -1,3 +1,9 @@
+/****************************************************************************************************************************
+ - File Name        : AirportServiceImpl
+ - Author           : Raza Hasan
+ - Creation Date    : 11-06-2020
+ - Description      : This is a service class which contains the business logic of Airport Service
+  ****************************************************************************************************************************/ 
 package com.capgemini.flightmanagementsystem.airportservice.service;
 
 import java.util.ArrayList;
@@ -17,7 +23,14 @@ public class AirportServiceImpl implements AirportService{
 	
 	@Autowired
 	AirportRepository repository;
-	
+	/****************************************************************************************************************************
+	- Method Name      : viewAirport
+	- Input Parameters : -
+	- Return type      : List<Flight>
+	- Author           : Raza Hasan
+	- Creation Date    : 11-06-2020
+	- Description      : Shows all the Airport available.
+	 ****************************************************************************************************************************/ 
 	@Override
 	public List<Airport> viewAirport() {
 		List<AirportEntity> entityList=repository.findAll();
@@ -32,7 +45,14 @@ public class AirportServiceImpl implements AirportService{
 	}
 		return newAirportList;
 	}
-
+	/****************************************************************************************************************************
+	- Method Name      : viewFlight
+	- Input Parameters : airport code
+	- Return type      : Airport Entity
+	- Author           : Raza Hasan
+	- Creation Date    : 11-06-2020
+	- Description      : Shows all the Airport of a gven airport code
+	 ****************************************************************************************************************************/ 
 	@Override
 	public AirportEntity viewAirportById(String airportcode) throws AirportNotFoundException {
 		Optional<AirportEntity> entity = repository.findById(airportcode);

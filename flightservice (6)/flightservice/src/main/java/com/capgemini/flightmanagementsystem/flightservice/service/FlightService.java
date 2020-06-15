@@ -12,6 +12,7 @@ import com.capgemini.flightmanagementsystem.flightservice.model.Flight;
 
 @Service
 public interface FlightService {
+	
 	public List<Flight> viewFlight();
 	public FlightEntity viewFlightById(long flightnumber) throws FlightNotFoundException;
 	public String addFlight(@Valid Flight flight);

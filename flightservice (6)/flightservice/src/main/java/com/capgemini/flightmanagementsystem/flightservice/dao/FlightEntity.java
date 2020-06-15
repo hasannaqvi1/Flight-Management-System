@@ -8,6 +8,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 
 @Entity
 @Table(name="Flight")
@@ -19,52 +20,51 @@ public class FlightEntity {
 	@Column(name="flight_model")
 	@NotBlank(message="Model Name is mandatory")
 	@NotNull(message="Model Name is mandatory")
+	@Size(min = 1, max = 8, message="Flight model must be equal to or greater than 1 character and less than 8")
 	private String flightModel;
 	@Column(name="carrier_name")
 	@NotBlank(message="Model Name is mandatory")
 	@NotNull(message="Model Name is mandatory")
+	@Size(min = 2, max = 8, message="Carrier Name must be equal to or greater than 2 character and less than 8")
 	private String carrierName;
 	@Column(name="seat_capacity")
 	private int seatCapacity;
-	public long getFlightnumber() {
+	public long getFlightNumber() {
 		return flightNumber;
 	}
-	public void setFlightnumber(long flightnumber) {
-		this.flightNumber = flightnumber;
+	public void setFlightNumber(long flightNumber) {
+		this.flightNumber = flightNumber;
 	}
-	public String getFlightmodel() {
+	public String getFlightModel() {
 		return flightModel;
 	}
-	public void setFlightmodel(String flightmodel) {
-		this.flightModel = flightmodel;
+	public void setFlightModel(String flightModel) {
+		this.flightModel = flightModel;
 	}
-	public String getCarriername() {
+	public String getCarrierName() {
 		return carrierName;
 	}
-	public void setCarriername(String carriername) {
-		this.carrierName = carriername;
+	public void setCarrierName(String carrierName) {
+		this.carrierName = carrierName;
 	}
-	public int getSeatcapacity() {
+	public int getSeatCapacity() {
 		return seatCapacity;
 	}
-	public void setSeatcapacity(int seatcapacity) {
-		this.seatCapacity = seatcapacity;
+	public void setSeatCapacity(int seatCapacity) {
+		this.seatCapacity = seatCapacity;
 	}
-	@Override
-	public String toString() {
-		return "Flight [flightnumber=" + flightNumber + ", flightmodel=" + flightModel + ", carriername=" + carrierName
-				+ ", seatcapacity=" + seatCapacity + "]";
-	}
-	public FlightEntity(long flightnumber, String flightmodel, String carriername, int seatcapacity) {
+	public FlightEntity(long flightNumber,
+			@NotBlank(message = "Model Name is mandatory") @NotNull(message = "Model Name is mandatory") String flightModel,
+			@NotBlank(message = "Model Name is mandatory") @NotNull(message = "Model Name is mandatory") String carrierName,
+			int seatCapacity) {
 		super();
-		this.flightNumber=flightnumber;
-		this.carrierName=carriername;
-		this.flightModel=flightmodel;
-		this.seatCapacity=seatcapacity;
+		this.flightNumber = flightNumber;
+		this.flightModel = flightModel;
+		this.carrierName = carrierName;
+		this.seatCapacity = seatCapacity;
 	}
 	public FlightEntity() {
-		super();
-		// TODO Auto-generated constructor stub
-	}	
-
+		
+	}
+	
 }
